@@ -1,0 +1,13 @@
+<div class="contact">
+  <h3 class="contact__name">{{ contact.firstname }} {{ contact.lastname }}</h3>
+  <p class="contact__phone">{{ contact.phone }}</p>
+  <div (click)="info()" class="contact__action contact__action--info">
+    <fa-icon [icon]="faInfo"></fa-icon>
+  </div>
+  <div (click)="openDialog()" class="contact__action contact__action--edit">
+    <fa-icon [icon]="faPencil"></fa-icon>
+  </div>
+  <div (click)="deleteContact()" class="contact__action contact__action--delete">
+    <fa-icon [icon]="faTrash"></fa-icon>
+  </div>
+</div>

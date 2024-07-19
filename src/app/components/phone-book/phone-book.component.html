@@ -1,0 +1,7 @@
+<div class="phone-book__content">
+  <h1 *ngIf="!contacts.length" class="empty-state">Your contact list is empty</h1>
+  <h1 *ngIf="!filteredContacts.length && contacts.length" class="empty-state">No search results</h1>
+  <div *ngFor="let contact of filteredContacts">
+    <app-phone-item [contact]="contact"></app-phone-item>
+  </div>
+</div>

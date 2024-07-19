@@ -1,0 +1,43 @@
+.dialog {
+  position: relative;
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__close {
+    width: 50%;
+    margin-top: 10px;
+  }
+}
+
+.form {
+  padding: 20px 0;
+
+  &__input {
+    width: 80%;
+  }
+
+  &__error {
+    color: red;
+  }
+
+  &__submit {
+    width: 50%;
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.black {
+  color: black;
+}
+
+.text-danger {
+  color: red;
+}

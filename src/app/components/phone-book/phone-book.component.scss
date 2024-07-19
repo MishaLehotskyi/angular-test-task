@@ -1,0 +1,29 @@
+@mixin lessThan600px {
+  @media (max-width: 599px) {
+    @content;
+  }
+}
+
+.phone-book {
+
+  &__content {
+    padding: 30px 60px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+
+    @include lessThan600px {
+      padding-inline: 15px;
+    }
+  }
+}
+
+.empty-state {
+  margin: 0;
+  line-height: normal;
+  text-align: center;
+
+  @include lessThan600px {
+    font-size: 18px;
+  }
+}

@@ -1,5 +1,18 @@
-<main>
-  <h1>My app</h1>
-</main>
-
-<router-outlet />
+<div class="app__container">
+  <header class="app__header header">
+    <a routerLink="/contacts" class="header__title">Contacts book app</a>
+    <div *ngIf="showHeaderActions" class="header__action-menu">
+      <div (click)="openDialog()" class="header__create">
+        <fa-icon size="lg" [icon]="faPlus"></fa-icon>
+      </div>
+      <input [(ngModel)]="query" type="text" class="header__search-bar" (ngModelChange)="onInputChange()" />
+      <fa-icon class="header__icon" size="lg" [icon]="faSearch"></fa-icon>
+    </div>
+  </header>
+  <main class="app__main">
+    <router-outlet />
+  </main>
+  <footer class="app__footer footer">
+    <p class="footer__content" >Copyright 2024</p>
+  </footer>
+</div>

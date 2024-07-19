@@ -1,0 +1,32 @@
+
+<div class="info-page__container">
+  <div class="info-page__card">
+    <div (click)="openDialog()" class="contact__action contact__action--edit">
+      <fa-icon [icon]="faPencil"></fa-icon>
+    </div>
+    <div (click)="deleteContact()" class="contact__action contact__action--delete">
+      <fa-icon [icon]="faTrash"></fa-icon>
+    </div>
+    <h1 class="info-page__title" >Contact Information</h1>
+    <div class="info-page__list">
+      <div class="info-page__item">
+        <strong>First Name:</strong> {{ contact.firstname }}
+      </div>
+      <div class="info-page__item">
+        <strong>Last Name:</strong> {{ contact.lastname }}
+      </div>
+      <div class="info-page__item">
+        <strong>Phone:</strong> {{ contact.phone }}
+      </div>
+      <div class="info-page__item">
+        <strong>Birthdate:</strong> {{ contact.birthdate }}
+      </div>
+      <div class="info-page__item">
+        <strong>Email:</strong> {{ contact.email }}
+      </div>
+      <div class="info-page__item">
+        <strong>Address:</strong> {{ contact.address }}
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,99 @@
+@mixin lessThan600px {
+  @media (max-width: 599px) {
+    @content;
+  }
+}
+
+.app {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  &__main {
+    flex-grow: 1;
+    overflow-y: scroll;
+  }
+  &__header {
+    background-color: #574f7d;
+    padding: 1rem 4rem;
+  }
+  &__footer {
+    background-color: #574f7d;
+    padding: 0.5rem;
+  }
+}
+
+.footer {
+  &__content {
+    text-align: center;
+  }
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  @include lessThan600px {
+    flex-direction: column;
+    row-gap: 10px;
+  }
+
+  &__title {
+    font-size: 26px;
+    font-weight: bold;
+    line-height: normal;
+    margin: 0;
+    text-align: center;
+  }
+
+  &__action-menu {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    column-gap: 20px;
+    align-items: center;
+  }
+
+  &__search-bar {
+    outline: none;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    width: 30vw;
+    font-size: 18px;
+    box-sizing: border-box;
+    padding-left: 10px;
+    padding-right: 35px;
+
+    &:focus {
+      border: 1px solid black;
+    }
+
+    @include lessThan600px {
+      width: 220px;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    right: 10px;
+    top: 7px;
+    color: black;
+  }
+
+  &__create {
+    width: 40px;
+    height: 40px;
+    box-sizing: border-box;
+    background-color: green;
+    border: 2px solid white;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+}

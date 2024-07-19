@@ -1,0 +1,66 @@
+@mixin lessThan600px {
+  @media (max-width: 599px) {
+    @content;
+  }
+}
+
+.info-page {
+  &__container {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+  }
+
+  &__card {
+    width: 60vw;
+    background-color: #503a65;
+    position: relative;
+    border-radius: 30px;
+    border: 2px solid white;
+    padding: 10px 20px;
+
+    @include lessThan600px {
+      width: 75vw;
+    }
+  }
+
+  &__item {
+    font-size: 20px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+  }
+
+  &__title {
+    font-size: 30px;
+  }
+}
+
+.contact__action {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  border: 2px solid white;
+  box-sizing: border-box;
+  top: -10px;
+  cursor: pointer;
+
+  &--delete {
+    right: -15px;
+    background-color: red;
+  }
+
+  &--edit {
+    right: 20px;
+    background-color: deepskyblue;
+  }
+}

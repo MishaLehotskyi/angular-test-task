@@ -1,0 +1,88 @@
+@mixin lessThan600px {
+  @media (max-width: 599px) {
+    @content;
+  }
+}
+
+.contact {
+  height: 100px;
+  position: relative;
+  box-sizing: border-box;
+  background-color: #503a65;
+  border-radius: 20px;
+  padding: 0 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border: solid 2px white;
+  transition: transform 0.5s ease-in-out;
+
+  @include lessThan600px {
+    padding-inline: 15px;
+  }
+
+  &:hover {
+    transform: scale(1.02);
+
+    @include lessThan600px {
+      transform: scale(1.01);
+    }
+  }
+
+  &__name {
+    font-size: 20px;
+    margin: 0;
+    line-height: normal;
+    display: block;
+    width: calc(100% - 120px);
+    text-overflow:ellipsis;
+    overflow: hidden;
+
+    @include lessThan600px {
+      font-size: 18px;
+    }
+  }
+  &__phone {
+    font-size: 20px;
+    margin: 0;
+    line-height: normal;
+    display: block;
+    text-overflow:ellipsis;
+    overflow: hidden;
+    width: 120px;
+
+    @include lessThan600px {
+      font-size: 18px;
+      width: 110px;
+    }
+  }
+  &__action {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    border: 2px solid white;
+    box-sizing: border-box;
+    top: -10px;
+    cursor: pointer;
+
+    &--delete {
+      right: -15px;
+      background-color: red;
+    }
+
+    &--edit {
+      right: 20px;
+      background-color: deepskyblue;
+    }
+
+    &--info {
+      right: 55px;
+      background-color: black;
+    }
+  }
+}

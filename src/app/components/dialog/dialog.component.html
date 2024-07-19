@@ -1,0 +1,55 @@
+<form [formGroup]="contactForm" (ngSubmit)="submitForm()" class="dialog__form form">
+  <div *ngIf="contactForm.get('firstname')?.invalid && contactForm.get('firstname')?.touched" class="text-danger">
+    First name is required
+  </div>
+  <mat-form-field class="form__input">
+    <mat-label>Firstname</mat-label>
+    <input matInput type="text" id="firstname" formControlName="firstname">
+  </mat-form-field>
+
+  <div *ngIf="contactForm.get('lastname')?.invalid && contactForm.get('lastname')?.touched" class="text-danger">
+    Last name is required
+  </div>
+  <mat-form-field class="form__input">
+    <mat-label>Lastname</mat-label>
+    <input matInput type="text" id="lastname" formControlName="lastname">
+  </mat-form-field>
+
+  <div *ngIf="contactForm.get('phone')?.invalid && contactForm.get('phone')?.touched" class="text-danger">
+    Please enter a valid phone number
+  </div>
+  <mat-form-field class="form__input">
+    <mat-label>Phone number</mat-label>
+    <input matInput type="text" id="phone" formControlName="phone">
+  </mat-form-field>
+
+  <div *ngIf="contactForm.get('birthdate')?.invalid && contactForm.get('birthdate')?.touched" class="text-danger">
+    Please enter a valid birth date
+  </div>
+  <mat-form-field class="form__input">
+    <mat-label>Choose a date</mat-label>
+    <input matInput [matDatepicker]="picker" id="birthdate" formControlName="birthdate">
+    <mat-hint class="black">MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <div *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched" class="text-danger">
+    Please enter a valid email address
+  </div>
+  <mat-form-field class="form__input">
+    <mat-label>Email</mat-label>
+    <input matInput type="text" id="email" formControlName="email">
+  </mat-form-field>
+
+  <div *ngIf="contactForm.get('address')?.invalid && contactForm.get('address')?.touched" class="text-danger">
+    Address is required
+  </div>
+  <mat-form-field class="form__input">
+    <mat-label>Address</mat-label>
+    <input matInput type="text" id="address" formControlName="address">
+  </mat-form-field>
+
+  <button mat-flat-button type="submit" class="form__submit" [disabled]="contactForm.invalid">Submit</button>
+  <button mat-flat-button mat-dialog-close class="dialog__close">Close</button>
+</form>
